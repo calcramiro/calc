@@ -24,7 +24,13 @@
 		else{
 		  y.val(y.val()*y.val());}});
 
-	 
+	 $("#cubo").on("click", function(){ 
+		var y = $("#pantalla");
+		if(isNaN(y.val())){
+		  y.val("Error");}
+		else{
+		  y.val(y.val()*y.val()*y.val());}});
+
 
 	 
 		
@@ -46,6 +52,7 @@
      <p> Número:
         <input id="pantalla" type="text"></p>
       <button id="cuadrado"> x <sup> 2 </sup> </button>
+	<button id="cuadrado"> x <sup> 3 </sup> </button>
 	<button id="limpiar"> Limpiar </button></p>
     </div>
   
