@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+    <meta charset="Ascii">
+    <title>CORE2016 P3</title>
+    <script src="CORE2016%20P3_files/jquery-1.js"></script>
+    <script type="text/javascript">
+
+	var x=0;
+	
+
+	$(function(){
+
+	  $("#pantalla").on("click", function(){
+		$("#pantalla").val("");});
+	  
+	 
+	 
+
+	  $("#cuadrado").on("click", function(){ 
+		var y = $("#pantalla");
+		if(isNaN(y.val())){
+		  y.val("Error");}
+		else{
+		  y.val(y.val()*y.val());}});
+
+	 
+
+	 
+		
+	
+
+	  $("#limpiar").on("click", function(){ 
+		x=0;
+		var y =$("#pantalla");
+		y.val("");});
+
+	});
+    </script>
+  </head>
+ 
+  <body>
+   <header>Buenos días, bienvenido a la calculadora de Carlos Andrés Ramiro (carlos.aramiro@alumnos.upm.es)</header>
+
+    <div id="main">
+     <p> Número:
+        <input id="pantalla" type="text"></p>
+      <button id="cuadrado"> x <sup> 2 </sup> </button>
+	<button id="limpiar"> Limpiar </button></p>
+    </div>
+  
+</body></html>

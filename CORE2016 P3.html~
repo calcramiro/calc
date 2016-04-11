@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+    <meta charset="Ascii">
+    <title>CORE2016 P3</title>
+    <script src="CORE2016%20P3_files/jquery-1.js"></script>
+    <script type="text/javascript">
+
+	var x=0;
+	var operacion;
+
+	$(function(){
+
+	  $("#pantalla").on("click", function(){
+		$("#pantalla").val("");});
+	  
+	  $("#suma").on("click", function(){ 
+		var y=$("#pantalla");
+		operacion="suma";
+		if(isNaN(y.val())){
+		  y.val("Error");}
+		else{
+		  x= (+x + +y.val());}
+		});	
+
+	  $("#resta").on("click", function(){ 
+		var y=$("#pantalla");
+		operacion="resta";
+		if(isNaN(y.val())){
+		  y.val("Error");}
+		else{
+		  x= (+x + +y.val());}
+		});	
+
+	  $("#cuadrado").on("click", function(){ 
+		var y = $("#pantalla");
+		if(isNaN(y.val())){
+		  y.val("Error");}
+		else{
+		  y.val(y.val()*y.val());}});
+
+	  $("#inverso").on("click", function(){ 
+		var y = $("#pantalla");
+		if(isNaN(y.val())){
+		  y.val("Error");}
+		else{
+		  y.val(1/y.val());}});
+
+	  $("#raiz").on("click", function(){ 
+		var y = $("#pantalla");
+		if(isNaN(y.val()) || y.val()<0){
+		  y.val("Error");}
+		else{
+		  y.val(Math.sqrt(y.val()));}});
+
+	  $("#pentera").on("click", function(){ 
+		var y = $("#pantalla");
+		if(isNaN(y.val())){
+		  y.val("Error");}
+		else{
+		  y.val(Math.round(y.val()));}});
+
+	  $("#potencia2").on("click", function(){ 
+		var y = $("#pantalla");
+		if(isNaN(y.val())){
+		  y.val("Error");}
+		else{
+		  y.val(Math.pow(2,y.val()));}});
+
+	  $("#factorial").on("click", function(){ 
+		var y = $("#pantalla");
+		if(isNaN(y.val()) || y.val()<0){
+		  y.val("Error");}
+		else{
+		  var i=y.val();
+		  var t=1;
+		  while(i>1){
+		     t*=i;
+		     i--;}
+		  y.val(t);}});
+
+	  $("#igual").on("click", function(){ 
+		var y = $("#pantalla");
+		if(isNaN(y.val()) || isNaN(x)){
+		  y.val("Error");}
+		else{
+		 if(operacion==="suma"){
+		    y.val(+y.val() + +x);
+		    x=0;}
+		 else if (operacion==="resta"){
+		  y.val(+x - +y.val());
+		    x=0;}}});
+
+	  $("#limpiar").on("click", function(){ 
+		x=0;
+		var y =$("#pantalla");
+		y.val("");});
+
+	});
+    </script>
+  </head>
+ 
+  <body>
+   <header>Buenos días, bienvenido a la calculadora de Carlos Andrés Ramiro (carlos.aramiro@alumnos.upm.es)</header>
+
+    <div id="main">
+     <p> Número:
+        <input id="pantalla" type="text"></p>
+       <p> <button id="suma"> + </button>
+        <button id="resta"> - </button>
+	<button id="cuadrado"> x <sup> 2 </sup> </button>
+	<button id="inverso"> 1/x </button>
+	<button id="raiz"> sqrt(x) </button>        
+        <button id="pentera"> parte_entera(x) </button>
+        <button id="potencia2"> 2 <sup>x</sup> </button>
+	<button id="factorial"> x! </button>
+	<button id="igual"> = </button>
+	<button id="limpiar"> Limpiar </button></p>
+    </div>
+  
+</body></html>
