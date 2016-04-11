@@ -24,7 +24,12 @@
 		else{
 		  y.val(y.val()*y.val());}});
 
-	 
+	 $("#raiz").on("click", function(){ 
+		var y = $("#pantalla");
+		if(isNaN(y.val()) || y.val()<0){
+		  y.val("Error");}
+		else{
+		  y.val(Math.sqrt(y.val()));}});
 
 	 
 		
@@ -46,6 +51,7 @@
      <p> Número:
         <input id="pantalla" type="text"></p>
       <button id="cuadrado"> x <sup> 2 </sup> </button>
+	<button id="raiz"> sqrt(x) </button>  
 	<button id="limpiar"> Limpiar </button></p>
     </div>
   
